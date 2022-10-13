@@ -12,10 +12,12 @@
 		2F9B9CC628F857B800206B01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B9CC528F857B800206B01 /* Assets.xcassets */; };
 		2F9B9CC928F857B800206B01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9B9CC828F857B800206B01 /* Preview Assets.xcassets */; };
 		2F9B9CCB28F857B800206B01 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B9CCA28F857B800206B01 /* Persistence.swift */; };
-		2F9B9CCE28F857B800206B01 /* Books.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B9CCC28F857B800206B01 /* Books.xcdatamodeld */; };
 		2F9B9CD828F857B800206B01 /* BooksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B9CD728F857B800206B01 /* BooksTests.swift */; };
 		2F9B9CE228F857B800206B01 /* BooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B9CE128F857B800206B01 /* BooksUITests.swift */; };
 		2F9B9CE428F857B800206B01 /* BooksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B9CE328F857B800206B01 /* BooksUITestsLaunchTests.swift */; };
+		2F9B9CF128F8585700206B01 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B9CF028F8585700206B01 /* Book.swift */; };
+		2FAFCA2728F883360022BD6D /* Books.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFCA2528F883360022BD6D /* Books.xcdatamodeld */; };
+		2FAFCA2928F8848B0022BD6D /* InsertBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FAFCA2828F8848B0022BD6D /* InsertBookView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,12 +44,14 @@
 		2F9B9CC528F857B800206B01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F9B9CC828F857B800206B01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2F9B9CCA28F857B800206B01 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		2F9B9CCD28F857B800206B01 /* Books.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Books.xcdatamodel; sourceTree = "<group>"; };
 		2F9B9CD328F857B800206B01 /* BooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9B9CD728F857B800206B01 /* BooksTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksTests.swift; sourceTree = "<group>"; };
 		2F9B9CDD28F857B800206B01 /* BooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9B9CE128F857B800206B01 /* BooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksUITests.swift; sourceTree = "<group>"; };
 		2F9B9CE328F857B800206B01 /* BooksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2F9B9CF028F8585700206B01 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		2FAFCA2628F883360022BD6D /* Books.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Books.xcdatamodel; sourceTree = "<group>"; };
+		2FAFCA2828F8848B0022BD6D /* InsertBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertBookView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +102,13 @@
 		2F9B9CC028F857B600206B01 /* Books */ = {
 			isa = PBXGroup;
 			children = (
+				2F9B9CF028F8585700206B01 /* Book.swift */,
 				2F9B9CC128F857B600206B01 /* BooksApp.swift */,
 				2F9B9CC328F857B600206B01 /* ContentView.swift */,
-				2F9B9CC528F857B800206B01 /* Assets.xcassets */,
+				2FAFCA2828F8848B0022BD6D /* InsertBookView.swift */,
 				2F9B9CCA28F857B800206B01 /* Persistence.swift */,
-				2F9B9CCC28F857B800206B01 /* Books.xcdatamodeld */,
+				2F9B9CC528F857B800206B01 /* Assets.xcassets */,
+				2FAFCA2528F883360022BD6D /* Books.xcdatamodeld */,
 				2F9B9CC728F857B800206B01 /* Preview Content */,
 			);
 			path = Books;
@@ -263,9 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F9B9CCE28F857B800206B01 /* Books.xcdatamodeld in Sources */,
 				2F9B9CCB28F857B800206B01 /* Persistence.swift in Sources */,
 				2F9B9CC428F857B600206B01 /* ContentView.swift in Sources */,
+				2FAFCA2728F883360022BD6D /* Books.xcdatamodeld in Sources */,
+				2F9B9CF128F8585700206B01 /* Book.swift in Sources */,
+				2FAFCA2928F8848B0022BD6D /* InsertBookView.swift in Sources */,
 				2F9B9CC228F857B600206B01 /* BooksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,12 +601,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		2F9B9CCC28F857B800206B01 /* Books.xcdatamodeld */ = {
+		2FAFCA2528F883360022BD6D /* Books.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				2F9B9CCD28F857B800206B01 /* Books.xcdatamodel */,
+				2FAFCA2628F883360022BD6D /* Books.xcdatamodel */,
 			);
-			currentVersion = 2F9B9CCD28F857B800206B01 /* Books.xcdatamodel */;
+			currentVersion = 2FAFCA2628F883360022BD6D /* Books.xcdatamodel */;
 			path = Books.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
