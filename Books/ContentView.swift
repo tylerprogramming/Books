@@ -10,6 +10,8 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var dbContext
+    
+    @State private var editMode = EditMode.inactive
 
     @FetchRequest(sortDescriptors: [], predicate: nil, animation: .default)
     private var listOfBooks: FetchedResults<Books>
@@ -18,7 +20,19 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(listOfBooks) { book in
-                    RowBook(book: book)
+                    HStack {
+                        RowBook(book: book)
+                        
+                        if !editMode.isEditing {
+                            NavigationLink(destination: DescriptionView(book: book), label: {
+                                Text("")
+                            })
+                        } else {
+                            NavigationLink(destination: EditBookView(book: book), label: {
+                                Text("")
+                            })
+                        }
+                    }
                 }
                 .onDelete(perform: { indexes in
                     Task(priority: .high) {
@@ -29,13 +43,16 @@ struct ContentView: View {
             .navigationTitle("Books")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
                     NavigationLink(destination: InsertBookView(), label: {
                         Image(systemName: "plus")
                     })
                 }
+                
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
+                }
             }
-            Text("Select an item")
+            .environment(\.editMode, $editMode)
         }
     }
 
