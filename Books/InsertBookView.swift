@@ -10,6 +10,8 @@ import SwiftUI
 struct InsertBookView: View {
     @Environment(\.managedObjectContext) var dbContext
     @Environment(\.dismiss) var dismiss
+    
+    @State private var selectedAuthor: Authors? = nil
     @State private var inputTitle: String = ""
     @State private var inputYear: String = ""
     
@@ -27,8 +29,14 @@ struct InsertBookView: View {
             }
             HStack {
                 Text("Author:")
-                Text("Undefined")
-                    .foregroundColor(.gray)
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(selectedAuthor?.name ?? "Undefined")
+                        .foregroundColor(selectedAuthor != nil ? Color.black : Color.gray)
+                    
+                    NavigationLink(destination: AuthorsView(selected: $selectedAuthor), label: {
+                        Text("Select Author")
+                    })
+                }
             }
             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
             Spacer()
@@ -56,7 +64,7 @@ struct InsertBookView: View {
             let newBook = Books(context: dbContext)
             newBook.title = title
             newBook.year = year
-            newBook.author = nil
+            newBook.author = selectedAuthor
             newBook.cover = UIImage(named: "bookcover")?.pngData()
             newBook.thumbnail = UIImage(named: "bookthumbnail")?.pngData()
             
